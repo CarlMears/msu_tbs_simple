@@ -17,8 +17,10 @@ def calc_era5_amsu_tbs(*,year,
         shift_value = 288
     elif resolution == '2.5/2.5':
         shift_value = 72
+    elif resolution == '1.0/1.0':
+        shift_value = 180
     else:
-        raise ValueError('resolution must be "0.5/0.625" or "2.5/2.5"')
+        raise ValueError('resolution must be "0.5/0.625", "2.5/2.5", or "1.0/1.0"')
     
     era5_read_path = Path(era5_read_path)
     d = read_era5_monthly_means_3D(year=year, 
@@ -125,6 +127,7 @@ def calc_era5_amsu_tbs(*,year,
 if __name__ == "__main__":
 
     resolution = '2.5/2.5'
+    resolution = '1.0/1.0'
     use_t2m = False
     sat = 'msu'
     channel_list = ['TLT']
@@ -147,7 +150,7 @@ if __name__ == "__main__":
     output_path = Path(__file__).resolve().parent / 'output'
     output_path.mkdir(parents=True,exist_ok=True)
 
-    year_to_do = 2000
+    year_to_do = 2024
     month_to_do = 1
     
     for channel in channel_list:
