@@ -86,6 +86,6 @@ python -m pip install -e .
 
 
 ## Example
-An example script (and input data) is provided in the /examples directory.
+An example script (and input data) is provided in the examples directory.  The example reads monthly data from ERA5 and produces 4 file, each for the 4 MSU channels (TLT, TMT, TTS, TLS).  The files in the examples/output folder (ERA5_TLT_Tbs_2024_01.test.nc, etc) correspond to the files the example script will create -- without the .test. in the filename.
 
 
