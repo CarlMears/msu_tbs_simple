@@ -10,6 +10,8 @@ from netCDF4 import Dataset
 from numpy.typing import NDArray
 
 class Era5MonthlyData(NamedTuple):
+
+    """This not used yet"""
     """The daily data for ERA5 surface and levels data."""
 
     year: int
@@ -69,7 +71,8 @@ def read_era5_data_monthly_simple(
     input_files: dict,
 ) -> dict:
     
-    """Read ERA5 surface/levels files.
+    """
+    Read ERA5 surface/levels files for the simple tb processing.
     """
 
     # The non-coordinate variables are all stored as packed integers and

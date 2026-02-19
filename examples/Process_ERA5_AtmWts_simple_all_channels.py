@@ -1,17 +1,16 @@
 import numpy as np
 from pathlib import Path
-
-#from era5_monthly import read_era5_monthly_means_3D, read_era5_monthly_means_2D
-#from msu_tbs_simple.AtmWts_method_1 import AtmWt
 from msu_tbs_simple.msu_tbs_simple import MSUTbsSimple
 from era5 import read_era5_data_monthly_simple, era5_monthly_files_simple
 import xarray as xr
 import matplotlib.pyplot as plt
+
 try:
     from rss_plotting.global_map import plot_global_map
     do_global_map = True
 except ImportError:
     print("rss_plotting module not found. Fancy Global map plotting will be unavailable.")
+    print("The RSS plotting module is available here: https://github.com/CarlMears/RSS_plotting")
     do_global_map = False
 
 if __name__ == "__main__":
@@ -36,7 +35,7 @@ if __name__ == "__main__":
         tbs = msu_tbs.compute_tbs(model_data=model_data, verbose=True)
 
         if do_global_map:
-            plot_global_map(np.flip(tbs,0),
+            fig,ax = plot_global_map(np.flip(tbs,0),
                             vmin=200,
                             vmax=285,
                             cmap='plasma',
