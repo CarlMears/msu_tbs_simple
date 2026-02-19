@@ -46,8 +46,8 @@ class MSUTbsSimple:
         if use_skin_temperature:
             ts = model_data['skin_temperature']
         else:
-            ts = model_data['surface_temperature']
-            
+            ts = model_data['2m_temperature']
+
         # calculate the Tbs and  weights.
         if verbose:
             print('Performing Ocean Calculation')

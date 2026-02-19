@@ -174,7 +174,7 @@ def read_era5_data_monthly_simple(
         'land_fraction': land_fraction[0,:,:],
         'temperature': temperature[0,:,:,:],
         'surface_pressure': surface_pressure[0,:,:],
-        'surface_temperature': surface_temperature[0,:,:],
+        '2m_temperature': surface_temperature[0,:,:],
         'skin_temperature': skin_temperature[0,:,:],
         'sea_ice_fraction': sea_ice_fraction[0,:,:],
     }

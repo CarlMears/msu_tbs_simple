@@ -15,9 +15,9 @@ except ImportError:
     do_global_map = False
 
 if __name__ == "__main__":
-    use_t2m = False
+    use_skin_temperature = True # Set to False to use 2m temperature instead of skin temperature in the Tbs calculation.  This is just for testing, the skin temperature should be used for the most accurate results.
     sat = 'msu'
-    channel_list = ['TLT']
+    channel_list = ['TLT','TMT','TTS','TLS']
 
     era5_read_path = Path(__file__).resolve().parent / 'example_era5_data'
     output_path = Path(__file__).resolve().parent / 'output'
@@ -30,7 +30,6 @@ if __name__ == "__main__":
         month_to_do = 1
         print(f'Processing Year: {year_to_do} Month: {month_to_do} Channel: {channel}')   
         
-
         input_files = era5_monthly_files_simple(year_to_do, month_to_do, era5_read_path)
         model_data = read_era5_data_monthly_simple(input_files)
 

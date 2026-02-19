@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / build
+build/
+*.egg-info/
+.eggs/
+
+# Editors and IDEs
+.idea/  # pycharm
+.vscode/ # VS Code
+*.swp
+*~
+.DS_Store # macOS
+
+# Sensitive files
+.env
+
+# Logs and other files
+*.log
+*.txt
+npm-debug.log*
+.pytest_cache/
+*01.nc
