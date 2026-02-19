@@ -1,7 +1,13 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+__pycache__/*
+**/__pycache__/*
+**/pycache/*
+**/pycache
 *.py[cod]
 *.so
+*.pyc
+
+
 
 # Environments
 .venv/
@@ -32,3 +38,5 @@ build/
 npm-debug.log*
 .pytest_cache/
 *01.nc
+src/msu_tbs_simple/__pycache__
+src/msu_tbs_simple/__pycache__/*.pyc

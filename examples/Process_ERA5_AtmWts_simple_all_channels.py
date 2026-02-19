@@ -34,27 +34,22 @@ if __name__ == "__main__":
         model_data = read_era5_data_monthly_simple(input_files)
 
         tbs = msu_tbs.compute_tbs(model_data=model_data, verbose=True)
-        
-        # tbs.to_netcdf(output_file)
-        do_global_map = False
+
         if do_global_map:
             plot_global_map(np.flip(tbs,0),
-                            vmin=230,
+                            vmin=200,
                             vmax=285,
                             cmap='plasma',
                             title=f'ERA5 {channel} Tbs, {year_to_do}-{month_to_do:02d}',
                             plt_colorbar=True)
         else:
             plt.figure(figsize=(12,6))
-            plt.imshow(tbs, vmin=230, vmax=285, cmap='plasma')
+            plt.imshow(tbs, vmin=200, vmax=285, cmap='plasma')
             plt.colorbar(label='Brightness Temperature (K)')
             plt.title(f'ERA5 {channel} Tbs, {year_to_do}-{month_to_do:02d}')
             plt.xlabel('Longitude Index')
             plt.ylabel('Latitude Index')
 
-
-        plt.show()
-        print
         ds = xr.Dataset(
             {
                 'tbs': (('lat', 'lon'), tbs, {'units': 'K', 'long_name': f'ERA5 {channel} Brightness Temperature'})
@@ -72,6 +67,7 @@ if __name__ == "__main__":
         output_file = output_path / f'ERA5_{channel}_Tbs_{year_to_do}_{month_to_do:02d}.nc'
         ds.to_netcdf(output_file)
         print('Wrote file: ',output_file)
+    plt.show()
         
 
 

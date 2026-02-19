@@ -17,23 +17,7 @@ def AtmLevelWts_Numba(*,weighting_function,
                         num_levels,
                         ps,
                         levels):
-    '''
 
-    :param weighting_function:
-    :param surface_weight:
-    :param space_weight:
-    :param pressure:
-    :param surface_pressure:
-    :param temp_profiles:
-    :param ts:
-    :param num_lats:
-    :param num_lons:
-    :param num_levels:
-    :param ps:
-    :param levels:
-    :param surface:
-    :return:
-    '''
 
     MAX_SURF_PRESSURE = 1100.0
     MIN_SURF_PRESSURE = 450.0
