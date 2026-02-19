@@ -30,14 +30,18 @@ $$
 P=P_{lower} e^{-(z-z_{lower})/h} 							
 $$
 where $T_{lower}$ and $P_{lower}$ are the values at the lower level at height zlower, γ is the lapse rate, and h is the pressure scale height.  The values for h and g are found from the level data:
+
 $$
 γ=(T_{upper}-T_{lower})/(z_{lower}-z_{upper})
-$$										
+$$		
+
 and
+
 $$
 h=(z_{lower}-z_{upper})/(log(P_{upper}/P_{lower})).$$										
 
 Solving for z as a function of P and substituting, we can express T as a function of P,
+
 $$
 T=T_{lower}  (ln(P_{upper}/P))/(ln(P_{upper}/P_{lower}))+T_{upper}  (ln(P/P_{lower}))/(ln(P_{upper}/P_{lower}))
 $$
@@ -51,6 +55,7 @@ $$
 where w(i) is the weight for the 1 hPa level with P = i.  For the lowest layer, between the surface and the lowest reference level above the surface, the weight (corresponding to Tlower in Eq. 4)  is added into the surface emission part of the surface weight.  Thus the final “surface weight” contains contributions for the surface emissivity, and from emission from the atmosphere near the surface. For the highest layer, between the top reference level and the top of the atmosphere, all weight is assigned to the top reference level.  In Figure 3, we plot the weights assigned to a monthly average profile corresponding to the four MSU/AMSU datasets.
 
 To calculate the brightness temperature from a temperature profile, multiply the weight for each level by the temperature and sum:
+
 $$
 T_b = W_{surface}T_{surface}+\sum_{i=0}^{n} w(i)T(i)   + W_{space}*2.73
 $$
