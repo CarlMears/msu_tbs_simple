@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "msu_tbs_simple"
+requires-python = ">=3.10"
+version = "0.1.1"
+
+dependencies = [
+  "netCDF4",
+  "numpy",
+  "numba",
+]
+
+authors = [
+  {name = "Carl Mears", email = "mears@remss.com"},
+]
+classifiers = [
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[project.urls]
+repository = "https://github.com/CarlMears/RSS_Method_1"
+

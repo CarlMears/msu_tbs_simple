@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: msu_tbs_simple
+Version: 0.1.1
+Author-email: Carl Mears <mears@remss.com>
+Project-URL: repository, https://github.com/CarlMears/RSS_Method_1
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.10
+Requires-Dist: netCDF4
+Requires-Dist: numpy
+Requires-Dist: numba
